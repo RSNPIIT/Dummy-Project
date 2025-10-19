@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for consistent button focus glow (not easily done purely in Tailwind) */
+        .btn-view:focus {
+            /* Indigo glow */
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.5); 
+        }
+        .btn-return:focus {
+            /* Red glow */
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.5); 
+        }
+        /* Divider for headings, kept simple */
+        .headings {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<!-- Applied bluish background (bg-blue-50) and moved font/min-height here -->
+<body class="font-sans bg-blue-50 min-h-screen"> 
+    <div id="main" class="flex justify-center p-4">
+        <div id="canvas" class="w-full max-w-6xl bg-white shadow-xl rounded-xl overflow-hidden">
+
+            <!-- NAVIGATION BAR -->
+            <nav class="bg-gray-800 p-4 shadow-lg">
+                <div class="flex items-center justify-between flex-wrap">
+                    <!-- Brand -->
+                    <a class="text-white text-xl font-bold rounded-lg px-3 py-1 hover:bg-gray-700 transition" href="#">
+                        Welcome User
+                    </a>
+
+                    <div class="flex items-center space-x-4">
+                        <!-- Logout Link -->
+                        <a class="text-gray-300 hover:text-white transition font-medium" href="#">
+                            Logout
+                        </a>
+
+                        <!-- Search Form -->
+                        <form class="flex space-x-2">
+                            <!-- Input tag using strict self-closing syntax: /> -->
+                            <input
+                                class="p-2 border border-gray-600 rounded-lg text-sm focus:ring-green-500 focus:border-green-500 bg-gray-700 text-white placeholder-gray-400 w-48"
+                                type="search"
+                                placeholder="Search E-Books"
+                                aria-label="Search"
+                            />
+                            <!-- Button -->
+                            <button
+                                class="bg-green-500 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition duration-150 ease-in-out shadow-md hover:shadow-lg"
+                                type="submit"
+                            >
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- MAIN CONTENT AREA -->
+            <div id="content" class="p-6">
+                <h3 class="headings text-2xl font-semibold text-gray-800 mb-4">Available E-Books</h3>
+
+                <!-- Table Container -->
+                <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-md">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Author</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- ROW 1 -->
+                            <tr class="hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</th>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Book 1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Author 1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex space-x-2">
+                                    <!-- VIEW BUTTON -->
+                                    <a href="#" class="
+                                        btn-view
+                                        inline-flex items-center px-3 py-1.5 border border-transparent 
+                                        text-xs font-medium rounded-full shadow-sm text-white 
+                                        bg-indigo-600 hover:bg-indigo-700 
+                                        transition-colors duration-150 focus:outline-none 
+                                    ">
+                                        View
+                                    </a>
+                                    <!-- RETURN BUTTON -->
+                                    <a href="#" class="
+                                        btn-return
+                                        inline-flex items-center px-3 py-1.5 border border-transparent 
+                                        text-xs font-medium rounded-full shadow-sm text-white 
+                                        bg-red-500 hover:bg-red-600 
+                                        transition-colors duration-150 focus:outline-none
+                                    ">
+                                        Return
+                                    </a>
+                                </td>
+                            </tr>
+                             <!-- ROW 2 -->
+                            <tr class="hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</th>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Book 2</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Author 2</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex space-x-2">
+                                    <a href="#" class="btn-view inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-150 focus:outline-none">View</a>
+                                    <a href="#" class="btn-return inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-red-500 hover:bg-red-600 transition-colors duration-150 focus:outline-none">Return</a>
+                                </td>
+                            </tr>
+                             <!-- ROW 3 -->
+                            <tr class="hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</th>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Book 3</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Author 3</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex space-x-2">
+                                    <a href="#" class="btn-view inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-150 focus:outline-none">View</a>
+                                    <a href="#" class="btn-return inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-red-500 hover:bg-red-600 transition-colors duration-150 focus:outline-none">Return</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- MAIN CONTENT AREA -->
+            <div id="content" class="p-6">
+                <h3 class="headings text-2xl font-semibold text-gray-800 mb-4">Requested E-Books</h3>
+
+                <!-- Table Container -->
+                <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-md">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Author</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- ROW 1 -->
+                            <tr class="hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</th>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Book 1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Author 1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex space-x-2">
+                                    <!-- VIEW BUTTON -->
+                                    <a href="#" class="
+                                        btn-view
+                                        inline-flex items-center px-3 py-1.5 border border-transparent 
+                                        text-xs font-medium rounded-full shadow-sm text-white 
+                                        bg-indigo-600 hover:bg-indigo-700 
+                                        transition-colors duration-150 focus:outline-none 
+                                    ">
+                                        View
+                                    </a>
+                                    <!-- RETURN BUTTON -->
+                                    <a href="#" class="
+                                        btn-return
+                                        inline-flex items-center px-3 py-1.5 border border-transparent 
+                                        text-xs font-medium rounded-full shadow-sm text-white 
+                                        bg-red-500 hover:bg-red-600 
+                                        transition-colors duration-150 focus:outline-none
+                                    ">
+                                        Return
+                                    </a>
+                                </td>
+                            </tr>
+                             <!-- ROW 2 -->
+                            <tr class="hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</th>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Book 2</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Author 2</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex space-x-2">
+                                    <a href="#" class="btn-view inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-150 focus:outline-none">View</a>
+                                    <a href="#" class="btn-return inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-red-500 hover:bg-red-600 transition-colors duration-150 focus:outline-none">Return</a>
+                                </td>
+                            </tr>
+                             <!-- ROW 3 -->
+                            <tr class="hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</th>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Book 3</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Author 3</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex space-x-2">
+                                    <a href="#" class="btn-view inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-150 focus:outline-none">View</a>
+                                    <a href="#" class="btn-return inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-red-500 hover:bg-red-600 transition-colors duration-150 focus:outline-none">Return</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+</html>
