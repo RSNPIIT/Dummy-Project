@@ -82,6 +82,7 @@ A visually appealing and readable experience, blending **functionality** and **m
 ✅ Simple, framework-free structure
 ✅ Elegant UI with Glassmorphism + Material tone
 ✅ Instant preview — no build tools required
+✅ The Project is in Buildup and formation phase -- All tools used so far are purely FOSS Tools.
 ```
 
 ---
