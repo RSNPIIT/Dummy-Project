@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramrup Satpati - Profile</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a clean, modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Divider for headings */
+        .headings {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-blue-50 min-h-screen"> 
+    <div id="main" class="flex justify-center p-4">
+        <div id="canvas" class="w-full max-w-6xl bg-white shadow-xl rounded-xl overflow-hidden">
+
+            <!-- Content Container -->
+            <div id="content" class="p-8">
+                <h3 class="headings text-3xl font-extrabold text-gray-800 text-center mb-6">
+                    About Myself
+                </h3>
+
+                <!-- TWO-COLUMN PROFILE LAYOUT -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <!-- LEFT COLUMN: PHOTO -->
+                    <div class="lg:col-span-1 flex justify-center items-start pt-4">
+                        <img 
+                            src="image_d58b28.png" 
+                            alt="Ramrup Satpati" 
+                            class="w-full max-w-xs md:max-w-sm rounded-full shadow-2xl border-4 border-indigo-500"
+                        />
+                    </div>
+
+                    <!-- RIGHT COLUMN: PROFESSIONAL TEXT (SHORTENED) -->
+                    <div class="lg:col-span-2 text-lg text-gray-700 leading-relaxed space-y-6">
+                        
+                        <p class="text-xl font-semibold text-gray-800">
+                            I'm Ramrup Satpati, an undergraduate student at IIT Madras and a 2025 Campus Partner at Perplexity. My core passion lies in tech-driven innovation, interdisciplinary learning, and creating impactful solutions.
+                        </p>
+
+                        <h4 class="text-xl font-bold text-gray-800 pt-2">Core Expertise & Recognition:</h4>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-base bg-indigo-50 p-4 rounded-lg shadow-inner">
+                            <li>Holds 50+ certifications from global leaders including Microsoft, NVIDIA, and UNICEF, demonstrating strong technical depth and social awareness.</li>
+                            <li>Expertise spans Python, SQL, AI/ML, Data Science, and full-stack web development (Flask, MERN), alongside practical understanding of cybersecurity and UI/UX design.</li>
+                            <li>Experienced in leadership roles, including Backend Intern at Solidron Pvt. Ltd., and various coordination positions at Aspire Institute and IITM.</li>
+                            <li>Polyglot with fluency in six languages, enhancing communication and coordination skills.</li>
+                            <li>Professional Objective: To leverage technical expertise and problem-solving ability to build impactful solutions in software development and data-driven technologies.</li>
+                        </ul>
+
+                        <p class="pt-4 text-base italic text-gray-500">
+                            🌱 I’m constantly evolving — blending engineering, analytics, and creativity to build solutions that matter, striving to leave every space better than I found it.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- BACK BUTTON (Optional but helpful for navigation) -->
+            <div class="p-6 text-center border-t border-gray-200">
+                <a href="welcome.html" class="
+                    inline-flex items-center px-6 py-3 border border-transparent 
+                    text-base font-semibold rounded-full shadow-lg text-white 
+                    bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-75
+                ">
+                    ← Back to About Page
+                </a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

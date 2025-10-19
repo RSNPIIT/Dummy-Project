@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <title>Registration Form</title>
     <!-- Load Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -36,7 +36,7 @@
         <div id="canvas">
             <!-- Form Card with the Glassmorphism style -->
             <div id="form-body" class="glass-card p-8 rounded-xl max-w-sm w-full">
-                <h1 class="text-3xl font-bold text-center text-white mb-6">Registration-Form</h1>
+                <h1 class="text-3xl font-bold text-center text-white mb-6">Registration Form</h1>
                 
                 <form action="" method="post" class="space-y-4">
                     
@@ -52,7 +52,7 @@
                             placeholder="John Doe"
                         />
                     </div>
-                    
+
                     <!-- Email-ID Input -->
                     <div class="space-y-1">
                         <label for="email" class="block text-sm font-medium text-white">Email-ID</label>
@@ -62,26 +62,25 @@
                             id="email" 
                             name="email"
                             class="glass-input block w-full px-4 py-2 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-white sm:text-sm" 
-                            placeholder="john.doe@example.com"
+                            placeholder="j*hndoe@esample.com"
                         />
                     </div>
                     
                     <!-- Password Input -->
                     <div class="space-y-1">
-                        <label for="pass" class="block text-sm font-medium text-white">Password</label>
+                        <label for="password" class="block text-sm font-medium text-white">Password</label>
                         <!-- Strict XHTML self-closing format: /> and glass-input style -->
-                        <input 
+                         <input 
                             type="password" 
-                            id="pass" 
+                            id="password" 
                             name="password"
                             class="glass-input block w-full px-4 py-2 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-white sm:text-sm" 
                             placeholder="p@$zw0*d"
                         />
                     </div>
                     
-                    <!-- Register Button and Login Link -->
-                    <div class="text-center pt-4 text-sm">
-                        <!-- Register Button - bright color to stand out -->
+                    <!-- Register Button -->
+                    <div class="pt-4">
                         <input 
                             id="Der" 
                             type="submit" 
@@ -91,7 +90,18 @@
                                 focus:ring-offset-2 focus:ring-cyan-300 transition duration-150 ease-in-out cursor-pointer" 
                             value="Register"
                         />
-                        
+                    </div>
+                    
+                    <!-- Login and Go Back Links -->
+                    <div class="text-center pt-4 text-sm space-y-2">
+                         <!-- Go Back Button (New addition) -->
+                        <a href="welcome.html" class="w-full inline-flex justify-center py-2 px-4 border border-transparent 
+                                font-bold rounded-full shadow-lg text-white 
+                                bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 
+                                focus:ring-offset-2 focus:ring-gray-400 transition duration-150 ease-in-out cursor-pointer">
+                            ← Go Back
+                        </a>
+
                         <p class="text-gray-200 mt-4 mb-2">Are you an existing user ?</p>
                         <!-- Login Link - bright cyan text -->
                         <a href="login.html" class="font-bold text-cyan-400 hover:text-cyan-500 transition duration-150 ease-in-out">
