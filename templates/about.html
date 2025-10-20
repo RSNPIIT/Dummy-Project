@@ -4,65 +4,122 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ramrup Satpati - Profile</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font for a clean, modern look */
         body {
             font-family: 'Inter', sans-serif;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientShift 20s linear infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1f2937;
         }
-        /* Divider for headings */
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+            50% { background-position: 100% 50%; filter: hue-rotate(180deg); }
+            100% { background-position: 0% 50%; filter: hue-rotate(360deg); }
+        }
+
+        #canvas {
+            backdrop-filter: blur(18px) saturate(180%);
+            -webkit-backdrop-filter: blur(18px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.35);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
         .headings {
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            color: #111827;
+        }
+
+        p, h4, li, span {
+            color: #1f2937 !important;
+        }
+
+        @keyframes neonPulse {
+            0% { border-color: hsl(240, 100%, 70%); box-shadow: 0 0 15px hsl(240,100%,70%); }
+            25% { border-color: hsl(180, 100%, 65%); box-shadow: 0 0 20px hsl(180,100%,65%); }
+            50% { border-color: hsl(320, 100%, 70%); box-shadow: 0 0 15px hsl(320,100%,70%); }
+            75% { border-color: hsl(45, 100%, 65%); box-shadow: 0 0 20px hsl(45,100%,65%); }
+            100% { border-color: hsl(240, 100%, 70%); box-shadow: 0 0 15px hsl(240,100%,70%); }
+        }
+
+        img {
+            animation: neonPulse 10s infinite ease-in-out;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .neon-button {
+            background: linear-gradient(270deg, #ff9a9e, #a1c4fd, #c2e9fb, #fad0c4);
+            background-size: 800% 800%;
+            animation: neonButton 8s linear infinite;
+            border: 2px solid transparent;
+            border-radius: 9999px;
+            color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .neon-button:hover {
+            transform: scale(1.07);
+        }
+
+        @keyframes neonButton {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .shadow-inner {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(4px);
         }
     </style>
 </head>
-
-<body class="font-sans bg-blue-50 min-h-screen"> 
+<body class="font-sans">
     <div id="main" class="flex justify-center p-4">
-        <div id="canvas" class="w-full max-w-6xl bg-white shadow-xl rounded-xl overflow-hidden">
+        <div id="canvas" class="w-full max-w-6xl shadow-xl rounded-xl overflow-hidden">
 
-            <!-- Content Container -->
             <div id="content" class="p-8">
-                <h3 class="headings text-3xl font-extrabold text-gray-800 text-center mb-6">
+                <h3 class="headings text-3xl font-extrabold text-center mb-6">
                     About Myself
                 </h3>
 
-                <!-- TWO-COLUMN PROFILE LAYOUT -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                    
-                    <!-- LEFT COLUMN: PHOTO -->
                     <div class="lg:col-span-1 flex justify-center items-start pt-4">
                         <img 
                             src="image_d58b28.png" 
                             alt="Ramrup Satpati" 
-                            class="w-full max-w-xs md:max-w-sm rounded-full shadow-2xl border-4 border-indigo-500"
+                            class="w-full max-w-xs md:max-w-sm rounded-full shadow-2xl border-4"
                         />
                     </div>
 
-                    <!-- RIGHT COLUMN: PROFESSIONAL TEXT (SHORTENED) -->
-                    <div class="lg:col-span-2 text-lg text-gray-700 leading-relaxed space-y-6">
-                        
-                        <p class="text-xl font-semibold text-gray-800">
+                    <div class="lg:col-span-2 text-lg leading-relaxed space-y-6">
+                        <p class="text-xl font-semibold">
                             I'm Ramrup Satpati, an undergraduate student at IIT Madras and a 2025 Campus Partner at Perplexity. My core passion lies in tech-driven innovation, interdisciplinary learning, and creating impactful solutions.
                         </p>
-                        <p class="text-xl font-semibold text-gray-800 flex items-center space-x-4">
+
+                        <p class="text-xl font-semibold flex items-center space-x-4">
                             <span>My LinkedIn Profile:</span> 
-                            <!-- LINKEDIN BUTTON (Styled as a rounded button) -->
-                            <a href="https://www.linkedin.com/in/ramrup-satpati-683970341/" class="
-                                inline-flex items-center px-4 py-2 border border-transparent 
-                                text-sm font-semibold rounded-full shadow-md text-white 
-                                bg-indigo-600 hover:bg-indigo-700 
-                                transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-indigo-400 focus:ring-opacity-75
-                            ">
+                            <a href="https://www.linkedin.com/in/ramrup-satpati-683970341/" class="neon-button inline-flex items-center px-4 py-2 text-sm font-semibold shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-400 focus:ring-opacity-75">
                                 Click Here
                             </a>
                         </p>
 
-                        <h4 class="text-xl font-bold text-gray-800 pt-2">Core Expertise & Recognition:</h4>
-                        <ul class="list-disc list-inside space-y-2 pl-4 text-base bg-indigo-50 p-4 rounded-lg shadow-inner">
+                        <h4 class="text-xl font-bold pt-2">Core Expertise & Recognition:</h4>
+                        <ul class="list-disc list-inside space-y-2 pl-4 text-base p-4 rounded-lg shadow-inner">
                             <li>Holds 50+ certifications from global leaders including Microsoft, NVIDIA, and UNICEF, demonstrating strong technical depth and social awareness.</li>
                             <li>Expertise spans Python, SQL, AI/ML, Data Science, and full-stack web development (Flask, MERN), alongside practical understanding of cybersecurity and UI/UX design.</li>
                             <li>Experienced in leadership roles, including Backend Intern at Solidron Pvt. Ltd., and various coordination positions at Aspire Institute and IITM.</li>
@@ -70,25 +127,18 @@
                             <li>Professional Objective: To leverage technical expertise and problem-solving ability to build impactful solutions in software development and data-driven technologies.</li>
                         </ul>
 
-                        <p class="pt-4 text-base italic text-gray-500">
+                        <p class="pt-4 text-base italic">
                             🌱 I’m constantly evolving — blending engineering, analytics, and creativity to build solutions that matter, striving to leave every space better than I found it.
                         </p>
                     </div>
-
                 </div>
             </div>
-            
-            <!-- BACK BUTTON (Optional but helpful for navigation) -->
-            <div class="p-6 text-center border-t border-gray-200">
-                <a href="welcome.html" class="
-                    inline-flex items-center px-6 py-3 border border-transparent 
-                    text-base font-semibold rounded-full shadow-lg text-white 
-                    bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-75
-                ">
+
+            <div class="p-6 text-center border-t border-gray-200 border-opacity-40">
+                <a href="welcome.html" class="neon-button inline-flex items-center px-6 py-3 text-base font-semibold rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-75">
                     ← Back to About Page
                 </a>
             </div>
-
         </div>
     </div>
 </body>

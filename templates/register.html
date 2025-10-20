@@ -4,113 +4,191 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration Form</title>
-    <!-- Load Tailwind CSS from CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Define the Glassmorphism effect */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
-            backdrop-filter: blur(10px); /* The key blurring effect */
-            -webkit-backdrop-filter: blur(10px); /* For Safari support */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Subtle shadow */
-        }
-        /* Style for inputs to match the glass aesthetic */
-        .glass-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white; /* Text color */
-        }
-        .glass-input::placeholder {
-            color: rgba(255, 255, 255, 0.7); /* Placeholder color */
-        }
-        /* Custom font for a clean, modern look */
         body {
             font-family: 'Inter', sans-serif;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #fccb90);
+            background-size: 400% 400%;
+            animation: gradientShift 18s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem 2rem;
+            border-radius: 1.5rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .glass-input {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #111827;
+        }
+
+        .glass-input::placeholder {
+            color: rgba(17, 24, 39, 0.7);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: rgba(79, 70, 229, 0.7);
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.4);
+        }
+
+        h1 {
+            background: linear-gradient(90deg, #ff758c, #a1c4fd, #ffc3a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            font-size: 3rem; /* Increased size */
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-color {
+            background: linear-gradient(90deg, #6ee7b7, #3b82f6, #8b5cf6);
+            background-size: 200% 200%;
+            animation: btnShift 6s linear infinite;
+            color: white;
+            font-weight: 700;
+            padding: 0.75rem 0;
+            border-radius: 9999px;
+            width: 100%;
+            box-shadow: 0 10px 15px rgba(59, 130, 246, 0.5);
+            transition: transform 0.2s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-color:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes btnShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        label {
+            color: #111827;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .link-button {
+            display: inline-block;
+            width: 100%;
+            font-weight: 700;
+            padding: 0.75rem 0;
+            border-radius: 9999px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .link-go-back {
+            background-color: #6b7280;
+            color: white;
+            box-shadow: 0 4px 6px rgba(107, 114, 128, 0.5);
+            transition: background-color 0.3s;
+        }
+
+        .link-go-back:hover {
+            background-color: #4b5563;
+        }
+
+        .text-info {
+            color: #374151;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .link-login {
+            font-weight: 700;
+            color: #0ea5e9;
+            text-align: center;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .link-login:hover {
+            color: #06b6d4;
         }
     </style>
 </head>
-<!-- Dramatic gradient background for the glass effect to stand out -->
-<body class="bg-gradient-to-br from-blue-700 to-purple-800 min-h-screen flex items-center justify-center">
-    <div id="main">
-        <div id="canvas">
-            <!-- Form Card with the Glassmorphism style -->
-            <div id="form-body" class="glass-card p-8 rounded-xl max-w-sm w-full">
-                <h1 class="text-3xl font-bold text-center text-white mb-6">Registration Form</h1>
-                
-                <form action="" method="post" class="space-y-4">
-                    
-                    <!-- Username Input -->
-                    <div class="space-y-1">
-                        <label for="username" class="block text-sm font-medium text-white">Username</label>
-                        <!-- Strict XHTML self-closing format: /> and glass-input style -->
-                        <input 
-                            type="text" 
-                            id="username" 
-                            name="username"
-                            class="glass-input block w-full px-4 py-2 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-white sm:text-sm" 
-                            placeholder="John Doe"
-                        />
-                    </div>
-
-                    <!-- Email-ID Input -->
-                    <div class="space-y-1">
-                        <label for="email" class="block text-sm font-medium text-white">Email-ID</label>
-                        <!-- Strict XHTML self-closing format: /> and glass-input style -->
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email"
-                            class="glass-input block w-full px-4 py-2 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-white sm:text-sm" 
-                            placeholder="j*hndoe@esample.com"
-                        />
-                    </div>
-                    
-                    <!-- Password Input -->
-                    <div class="space-y-1">
-                        <label for="password" class="block text-sm font-medium text-white">Password</label>
-                        <!-- Strict XHTML self-closing format: /> and glass-input style -->
-                         <input 
-                            type="password" 
-                            id="password" 
-                            name="password"
-                            class="glass-input block w-full px-4 py-2 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-white sm:text-sm" 
-                            placeholder="p@$zw0*d"
-                        />
-                    </div>
-                    
-                    <!-- Register Button -->
-                    <div class="pt-4">
-                        <input 
-                            id="Der" 
-                            type="submit" 
-                            class="w-full inline-flex justify-center py-2 px-4 border border-transparent 
-                                font-bold rounded-full shadow-lg text-gray-800 
-                                bg-cyan-400 hover:bg-cyan-500 focus:outline-none focus:ring-2 
-                                focus:ring-offset-2 focus:ring-cyan-300 transition duration-150 ease-in-out cursor-pointer" 
-                            value="Register"
-                        />
-                    </div>
-                    
-                    <!-- Login and Go Back Links -->
-                    <div class="text-center pt-4 text-sm space-y-2">
-                         <!-- Go Back Button (New addition) -->
-                        <a href="welcome.html" class="w-full inline-flex justify-center py-2 px-4 border border-transparent 
-                                font-bold rounded-full shadow-lg text-white 
-                                bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 
-                                focus:ring-offset-2 focus:ring-gray-400 transition duration-150 ease-in-out cursor-pointer">
-                            ← Go Back
-                        </a>
-
-                        <p class="text-gray-200 mt-4 mb-2">Are you an existing user ?</p>
-                        <!-- Login Link - bright cyan text -->
-                        <a href="login.html" class="font-bold text-cyan-400 hover:text-cyan-500 transition duration-150 ease-in-out">
-                            Click Here to Login
-                        </a>
-                    </div>
-                </form>
+<body>
+    <div class="glass-card">
+        <h1 class="text-4xl font-extrabold text-center mb-8 tracking-wide">Registration Form</h1>
+        <form action="" method="post" class="space-y-6">
+            <div>
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username"
+                    class="glass-input block w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400 sm:text-sm" 
+                    placeholder="John Doe"
+                />
             </div>
-        </div>
+
+            <div>
+                <label for="email">Email-ID</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    class="glass-input block w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400 sm:text-sm" 
+                    placeholder="j*hn.doe@example.com"
+                />
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password"
+                    class="glass-input block w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400 sm:text-sm" 
+                    placeholder="••••••"
+                />
+            </div>
+
+            <div>
+                <input 
+                    id="Der" 
+                    type="submit" 
+                    class="btn-color" 
+                    value="Register"
+                />
+            </div>
+
+            <div>
+                <a href="welcome.html" class="link-button link-go-back">← Go Back</a>
+                <p class="text-info">Are you an existing user?</p>
+                <a href="login.html" class="link-login">Click Here to Login</a>
+            </div>
+        </form>
     </div>
 </body>
 </html>
