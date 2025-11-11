@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -130,59 +130,52 @@
             </div>
 
             <!-- SUMMARY SECTION (Target for Navbar link) -->
+            <!-- SUMMARY SECTION -->
             <div id="summary-section" class="p-6 pt-0">
                 <h3 class="headings text-2xl font-semibold text-gray-800 mb-4">Summary</h3>
 
-                <!-- SUMMARY CARDS AREA (Updated to 4 columns on large screens) -->
                 <div class="grid grid-cols-2 gap-6 lg:grid-cols-4">
-                    
+        
                     <!-- USERS CARD (Indigo) -->
                     <div class="p-6 rounded-xl shadow-lg bg-indigo-100 border-l-4 border-indigo-600">
                         <h3 class="text-sm font-semibold text-indigo-800 uppercase tracking-wider">Users</h3>
-                        <h1 class="text-4xl font-extrabold text-indigo-900 mt-1">5</h1>
+                        <h1 class="text-4xl font-extrabold text-indigo-900 mt-1">{{ users_count }}</h1>
                     </div>
 
-                    <!-- REQUESTED CARD (New, Cyan/Blue style) -->
+                    <!-- REQUESTED CARD -->
                     <div class="p-6 rounded-xl shadow-lg bg-cyan-100 border-l-4 border-cyan-600">
                         <h3 class="text-sm font-semibold text-cyan-800 uppercase tracking-wider">Requested</h3>
-                        <h1 class="text-4xl font-extrabold text-cyan-900 mt-1">4</h1>
+                        <h1 class="text-4xl font-extrabold text-cyan-900 mt-1">{{ requested_count }}</h1>
                     </div>
-                    
-                    <!-- GRANTED CARD (Green) -->
+        
+                    <!-- GRANTED CARD -->
                     <div class="p-6 rounded-xl shadow-lg bg-green-100 border-l-4 border-green-600">
                         <h3 class="text-sm font-semibold text-green-800 uppercase tracking-wider">Granted</h3>
-                        <h1 class="text-4xl font-extrabold text-green-900 mt-1">5</h1>
+                        <h1 class="text-4xl font-extrabold text-green-900 mt-1">{{ granted_count }}</h1>
                     </div>
-                    
-                    <!-- AVAILABLE E-BOOKS CARD (Yellow) -->
+        
+                    <!-- AVAILABLE E-BOOKS CARD -->
                     <div class="p-6 rounded-xl shadow-lg bg-yellow-100 border-l-4 border-yellow-600">
                         <h3 class="text-sm font-semibold text-yellow-800 uppercase tracking-wider">Available E-Books</h3>
-                        <h1 class="text-4xl font-extrabold text-yellow-900 mt-1">10</h1>
+                        <h1 class="text-4xl font-extrabold text-yellow-900 mt-1">{{ available_count }}</h1>
                     </div>
 
                 </div>
             </div>
-            <!-- Button Content for the Creation of a New E-Book -->
-            <div class="p-6 text-center flex justify-center space-x-6">
-                <!-- CREATE NEW BUTTON: Rounded, red, strong call-to-action style -->
-                <a href="create_eb.html" class="
-                    inline-flex items-center px-6 py-3 border border-transparent 
-                    text-base font-semibold rounded-full shadow-lg text-white 
-                    bg-red-600 hover:bg-red-700 
-                    transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-400 focus:ring-opacity-75
-                ">
-                    Create New (+)
+
+            <!-- Button Content for the Creation of a New E-Book --> 
+            <div class="p-6 text-center flex justify-center space-x-6"> 
+                <!-- CREATE NEW BUTTON: Rounded, red, strong call-to-action style --> 
+                <a href="{{ url_for('controllers_bp.create_ebook') }}" class=" inline-flex items-center px-6 py-3 border border-transparent text-base font-semibold rounded-full shadow-lg text-white bg-red-600 hover:bg-red-700 transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-400 focus:ring-opacity-75 "> 
+                    Create New (+) 
                 </a>
-                <!-- GO BACK BUTTON -->
-                <a href="welcome.html" class="
-                    inline-flex items-center px-6 py-3 border border-transparent 
-                    text-base font-semibold rounded-full shadow-lg text-white 
-                    bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-75
-                ">
-                    ← Go Back
-                </a>
-            </div>
+                <!-- GO BACK BUTTON --> 
+                <a href="/" class=" inline-flex items-center px-6 py-3 border border-transparent text-base font-semibold rounded-full shadow-lg text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-75 ">
+                    ← Go Back 
+                </a> 
+            </div> 
         </div>
+
     </div>
 </body>
 </html>
